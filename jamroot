@@ -1,0 +1,12 @@
+project args_project
+    ;
+
+build-project args
+    ;
+
+build-project libargs
+    ;
+
+use-project /lib_args
+    : libargs
+    ;
