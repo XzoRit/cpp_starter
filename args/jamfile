@@ -1,5 +1,5 @@
-project args
-    : requirements <library>/lib_args//lib
+project #prj_name#
+    : requirements <library>/lib_#prj_name#//lib
     ;
 
 constant sources

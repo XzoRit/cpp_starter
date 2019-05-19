@@ -1,12 +1,12 @@
-project args_project
+project #prj_name#_project
     ;
 
-build-project args
+build-project #prj_name#
     ;
 
-build-project libargs
+build-project lib#prj_name#
     ;
 
-use-project /lib_args
-    : libargs
+use-project /lib_#prj_name#
+    : lib#prj_name#
     ;

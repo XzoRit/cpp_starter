@@ -1,22 +1,22 @@
 cmake_minimum_required(VERSION 3.12)
 
 project(
-  args_executeable
+  #prj_name#_executeable
   VERSION 0.0
-  DESCRIPTION "executable args application")
+  DESCRIPTION "executable #prj_name# application")
 
 add_executable(
-  args_exe)
+  #prj_name#_exe)
 target_sources(
-  args_exe
+  #prj_name#_exe
   PRIVATE
   "main.cpp")
 target_link_libraries(
-  args_exe
+  #prj_name#_exe
   PRIVATE
-  libargs::lib
+  lib#prj_name#::lib
   Boost::program_options)
 
 add_test(
-  NAME args::exe
-  COMMAND args_exe "--help")
+  NAME #prj_name#::exe
+  COMMAND #prj_name#_exe "--help")

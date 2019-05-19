@@ -1,42 +1,42 @@
 cmake_minimum_required(VERSION 3.12)
 
 project(
-  args_library
+  #prj_name#_library
   VERSION 0.0
-  DESCRIPTION "library for parsing args")
+  DESCRIPTION "library for parsing #prj_name#")
 
 add_library(
-  libargs_obj_lib OBJECT)
+  lib#prj_name#_obj_lib OBJECT)
 target_sources(
-  libargs_obj_lib
-  PRIVATE "args.cpp")
+  lib#prj_name#_obj_lib
+  PRIVATE "#prj_name#.cpp")
 target_include_directories(
-  libargs_obj_lib
+  lib#prj_name#_obj_lib
   PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/..")
 
 add_library(
-  libargs_lib)
+  lib#prj_name#_lib)
 target_link_libraries(
-  libargs_lib
-  PUBLIC libargs_obj_lib)
+  lib#prj_name#_lib
+  PUBLIC lib#prj_name#_obj_lib)
 
 add_library(
-  libargs::lib ALIAS libargs_lib)
+  lib#prj_name#::lib ALIAS lib#prj_name#_lib)
 
 add_executable(
-  libargs_test)
+  lib#prj_name#_test)
 target_sources(
-  libargs_test
+  lib#prj_name#_test
   PRIVATE
-  "args.test.cpp"
+  "#prj_name#.test.cpp"
   "main.test.cpp")
 target_link_libraries(
-  libargs_test
+  lib#prj_name#_test
   PRIVATE
-  libargs::lib
+  lib#prj_name#::lib
   Boost::unit_test_framework
 )
 
 add_test(
-  NAME libargs::test
-  COMMAND libargs_test "--color_output=false")
+  NAME lib#prj_name#::test
+  COMMAND lib#prj_name#_test "--color_output=false")

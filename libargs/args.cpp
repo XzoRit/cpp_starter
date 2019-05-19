@@ -1,8 +1,8 @@
-#include <libargs/args.hpp>
+#include <lib#prj_name#/#prj_name#.hpp>
 
 namespace xzr
 {
-namespace args
+namespace #prj_name#
 {
 inline namespace v1
 {

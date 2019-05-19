@@ -1,6 +1,6 @@
 namespace xzr
 {
-namespace args
+namespace #prj_name#
 {
 inline namespace v1
 {

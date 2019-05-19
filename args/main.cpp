@@ -1,4 +1,4 @@
-#include <libargs/args.hpp>
+#include <lib#prj_name#/#prj_name#.hpp>
 #include <boost/program_options.hpp>
 #include <iostream>
 #include <iterator>
@@ -7,7 +7,7 @@ namespace po = boost::program_options;
 
 int main(int ac, char *av[])
 {
-    std::cout << "Hello args\n";
+    std::cout << "Hello #prj_name#\n";
 
   try
   {
@@ -36,5 +36,5 @@ int main(int ac, char *av[])
       std::cerr << "Exception of unknown type!\n";
   }
 
-  return xzr::args::add(0, 0);
+  return xzr::#prj_name#::add(0, 0);
 }
