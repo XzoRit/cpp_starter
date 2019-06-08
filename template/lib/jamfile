@@ -1,4 +1,4 @@
-project lib_#prj_name#
+project lib
     : usage-requirements <include>..
     ;
 

@@ -1,8 +1,8 @@
-#include <lib#prj_name#/#prj_name#.hpp>
+#include <lib/lib.hpp>
 
 namespace xzr
 {
-namespace #prj_name#
+namespace lib
 {
 inline namespace v1
 {

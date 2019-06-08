@@ -1,12 +1,12 @@
-project #prj_name#_project
+project app_project
     ;
 
-build-project #prj_name#
+build-project app
     ;
 
-build-project lib#prj_name#
+build-project lib
     ;
 
-use-project /lib_#prj_name#
-    : lib#prj_name#
+use-project /lib
+    : lib
     ;

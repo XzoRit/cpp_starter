@@ -1,5 +1,5 @@
-project #prj_name#
-    : requirements <library>/lib_#prj_name#//lib
+project app
+    : requirements <library>/lib//lib
     ;
 
 constant sources
