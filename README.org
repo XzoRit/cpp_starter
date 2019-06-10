@@ -1,20 +1,24 @@
 * template for c++ projects
 The template folder contains the project structure.
-The files within contain placeholders which are replaced with the new project name
-by executing the contained script.
+Clone this repository and rename the template folder to your project name.
 ** build files
-Boost.Build and CMake build files are generated.
-** formatting
-Clang-Format file is generated.
-
-~/projects/programming/cmake/bin/cmake .. -DBoost_DEBUG=TRUE
-~/projects/programming/cmake/bin/ctest -R 'args::exe' -V
-make help
+Boost.Build and CMake build files are available.
+*** Boost.Build
+mkdir build_boost
+**** build lib
+b2 -q --build-dir=build_boost toolset=gcc lib//lib
+**** execute lib test
+b2 -q --build-dir=build_boost toolset=gcc lib//test
+**** build application executeable
+b2 -q --build-dir=build_boost toolset=gcc app//exe
+**** run application executeable
+b2 -q --build-dir=build_boost toolset=gcc app//run
+*** CMake
+mkdir build_cmake
+cd build_cmake
+cmake ..
 make
-make test
-
-b2 -q --build-dir=boost_build toolset=clang args//exe
-b2 -q --build-dir=boost_build toolset=gcc args//exe
-b2 -q --build-dir=boost_build toolset=gcc args//run
-b2 -q --build-dir=boost_build toolset=gcc libargs//lib
-b2 -q --build-dir=boost_build toolset=gcc libargs//test
+ctest -R 'app::exe' -V
+ctest -R lib::test' -V
+** formatting
+Clang-Format file is available.
