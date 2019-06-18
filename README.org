@@ -6,13 +6,13 @@ Boost.Build and CMake build files are available.
 *** Boost.Build
 mkdir build_boost
 **** build lib
-b2 -q --build-dir=build_boost toolset=gcc lib//lib
+b2 -q toolset=gcc lib//lib
 **** execute lib test
-b2 -q --build-dir=build_boost toolset=gcc lib//test
+b2 -q toolset=gcc lib//test
 **** build application executeable
-b2 -q --build-dir=build_boost toolset=gcc app//exe
+b2 -q toolset=gcc app//exe
 **** run application executeable
-b2 -q --build-dir=build_boost toolset=gcc app//run
+b2 -q toolset=gcc app//run
 *** CMake
 mkdir build_cmake
 cd build_cmake
