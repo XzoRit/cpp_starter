@@ -53,12 +53,10 @@ ForEachMacros:
   - Q_FOREACH
   - BOOST_FOREACH
 IncludeCategories:
-  - Regex: '.*'
+  - Regex: '<[^.]+\.hp*>'
     Priority: 1
-  - Regex: '^<(boost|gtest|gmock)/'
+  - Regex: '^<[a-zA-Z_]+>'
     Priority: 2
-  - Regex: '^<(llvm|llvm-c|clang|clang-c)/'
-    Priority: 3
 IncludeIsMainRegex: (_test)?$
 IndentCaseLabels: false
 IndentWidth: 2
