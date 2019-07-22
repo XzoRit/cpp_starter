@@ -20,5 +20,7 @@ cd build_cmake && ctest -V
 ctest -R 'app::exe' -V
 ctest -R lib::test' -V
 ** formatting
-Clang-Format file is available.
-find . -type f -name 'CMakeLists.txt' -execdir cmake-format -i {} \;
+*** Clang-Format file is available.
+*** cmake-format configuration
+see [[https://github.com/cheshirekow/cmake_format][cmake-format]]
+execute with: find . -type f -name 'CMakeLists.txt' -execdir cmake-format -i {} \;
