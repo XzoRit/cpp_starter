@@ -14,11 +14,15 @@ b2 --build-dir=./build_boost -q toolset=gcc app//exe
 **** run application executeable
 b2 --build-dir=./build_boost -q toolset=gcc app//run
 *** CMake
+**** configure
 mkdir build_cmake
-cmake -B ./build_cmake
+cmake -B ./build_cmake -S ./ -D CMAKE_C_COMPILER=gcc-9 -D CMAKE_CXX_COMPILER=g++-9
+**** build
 cmake --build ./build_cmake
+cmake --build ./build_cmake --target lib_test
 *** execute test and app
 cmake --build ./build_cmake --target test
+Does not build targets before execution!
 **** execute test and app with ctest
 cd build_cmake && ctest -V
 ctest -R 'app::exe' -V
