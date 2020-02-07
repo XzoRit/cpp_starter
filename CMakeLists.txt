@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(app VERSION 0.0)
+project(project_name VERSION 0.0 DESCRIPTION "enter description here")
 
 enable_testing()
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

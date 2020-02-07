@@ -1,5 +1,13 @@
+constant inc_dir
+    : .
+    ;
+
+constant src_dir
+    : $(inc_dir)/lib
+    ;
+
 project lib
-    : usage-requirements <include>..
+    : usage-requirements <include>$(inc_dir)
     ;
 
 import boost
@@ -9,16 +17,16 @@ boost.use-project
     ;
 
 constant test_sources
-    : [ glob *.test.cpp ]
+    : [ glob $(src_dir)/*.test.cpp ]
     ;
 
 constant sources
-    : [ glob *.cpp : $(test_sources) ]
+    : [ glob $(src_dir)/*.cpp : $(test_sources) ]
     ;
 
 lib lib
     : $(sources)
-    : <include>..
+    : <include>$(inc_dir)
     ;
 
 import boost
