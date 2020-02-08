@@ -1,9 +1,4 @@
 set(
-  BOOST_VERSION
-  1.70.0
-)
-
-set(
   BOOST_ROOT
   $ENV{BOOST_ROOT}
 )
@@ -18,8 +13,6 @@ set(
 
 find_package(
   Boost
-  ${BOOST_VERSION}
-  EXACT
   REQUIRED
   COMPONENTS
     program_options
@@ -29,8 +22,8 @@ find_package(
 if(Boost_FOUND)
   set_target_properties(
     Boost::boost
-    Boost::unit_test_framework
     Boost::program_options
+    Boost::unit_test_framework
     PROPERTIES
       IMPORTED_GLOBAL
       true

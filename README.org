@@ -1,3 +1,4 @@
+[[https://travis-ci.org/XzoRit/cpp_starter][https://travis-ci.org/XzoRit/cpp_starter.svg?branch=master]]
 * template for c++ projects
 This folder contains the project structure.
 Clone this repository delete the .git folder rename the project folder to your project name.
@@ -28,3 +29,5 @@ ctest -R 'lib::test' --output-on-failure
 *** cmake-format configuration
 see [[https://github.com/cheshirekow/cmake_format][cmake-format]]
 execute with: find . -type f -name 'CMakeLists.txt' -execdir cmake-format -i {} \;
+** ci
+Support for travis-ci is available.
