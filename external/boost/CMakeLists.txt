@@ -1,8 +1,20 @@
-set(BOOST_VERSION 1.70.0)
+set(
+  BOOST_VERSION
+  1.70.0
+)
 
-set(BOOST_ROOT $ENV{BOOST_ROOT})
-set(BOOST_LIBRARYDIR "${BOOST_ROOT}/stage/lib")
-set(Boost_NO_SYSTEM_PATHS ON)
+set(
+  BOOST_ROOT
+  $ENV{BOOST_ROOT}
+)
+set(
+  BOOST_LIBRARYDIR
+  "${BOOST_ROOT}/stage/lib"
+)
+set(
+  Boost_NO_SYSTEM_PATHS
+  ON
+)
 
 find_package(
   Boost

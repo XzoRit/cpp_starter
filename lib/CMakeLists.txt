@@ -1,5 +1,3 @@
-project(lib VERSION 0.0 DESCRIPTION "enter description here")
-
 set(
   inc_dir
   ${CMAKE_CURRENT_SOURCE_DIR}
@@ -17,8 +15,8 @@ add_library(
 target_sources(
   lib
   PRIVATE
-    "${src_dir}/lib.cpp"
-    "${src_dir}/lib.hpp"
+  "${src_dir}/lib.cpp"
+  "${src_dir}/lib.hpp"
 )
 
 target_include_directories(
@@ -30,7 +28,7 @@ target_include_directories(
 add_library(
   lib::lib
   ALIAS
-    lib
+  lib
 )
 
 add_executable(
@@ -40,8 +38,8 @@ add_executable(
 target_sources(
   lib_test
   PRIVATE
-    "${src_dir}/lib.test.cpp"
-    "${src_dir}/main.test.cpp"
+  "${src_dir}/lib.test.cpp"
+  "${src_dir}/main.test.cpp"
 )
 
 target_link_libraries(
@@ -52,7 +50,8 @@ target_link_libraries(
 )
 
 add_test(
-  NAME lib::test
+  NAME
+    lib::test
   COMMAND
     lib_test
     "--color_output=false"
