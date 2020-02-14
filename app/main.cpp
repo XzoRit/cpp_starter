@@ -7,11 +7,12 @@
 
 namespace po = boost::program_options;
 
-int main(int ac, char* av[])
+int main(int ac, char *av[])
 {
     std::cout << "Hello app\n";
 
-    try {
+    try
+    {
         po::options_description desc("Allowed options");
         desc.add_options()("help", "produce help message");
 
@@ -19,13 +20,18 @@ int main(int ac, char* av[])
         po::store(po::parse_command_line(ac, av, desc), vm);
         po::notify(vm);
 
-        if (vm.count("help")) {
+        if (vm.count("help"))
+        {
             std::cout << desc << "\n";
         }
-    } catch (std::exception& e) {
+    }
+    catch (std::exception &e)
+    {
         std::cerr << "error: " << e.what() << "\n";
         return 1;
-    } catch (...) {
+    }
+    catch (...)
+    {
         std::cerr << "Exception of unknown type!\n";
     }
 
