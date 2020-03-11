@@ -7,7 +7,7 @@
 
 namespace po = boost::program_options;
 
-int main(int ac, char *av[])
+int main(int ac, char* av[])
 {
     std::cout << "Hello app\n";
 
@@ -25,7 +25,7 @@ int main(int ac, char *av[])
             std::cout << desc << "\n";
         }
     }
-    catch (std::exception &e)
+    catch (std::exception& e)
     {
         std::cerr << "error: " << e.what() << "\n";
         return 1;
