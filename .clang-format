@@ -8,5 +8,6 @@ AllowAllParametersOfDeclarationOnNextLine: false
 AlwaysBreakTemplateDeclarations: Yes
 BinPackArguments: false
 BinPackParameters: false
+BreakConstructorInitializers: BeforeComma
 PointerAlignment: Left
 ...
