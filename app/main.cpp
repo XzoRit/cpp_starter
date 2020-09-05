@@ -3,7 +3,6 @@
 #include <boost/program_options.hpp>
 
 #include <iostream>
-#include <iterator>
 
 namespace po = boost::program_options;
 
