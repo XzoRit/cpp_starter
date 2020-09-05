@@ -24,7 +24,7 @@ int main(int ac, char* av[])
             std::cout << desc << "\n";
         }
     }
-    catch (std::exception& e)
+    catch (const std::exception& e)
     {
         std::cerr << "error: " << e.what() << "\n";
         return 1;
