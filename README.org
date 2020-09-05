@@ -34,5 +34,5 @@ Support for travis-ci is available.
 ** compile_comand.json
 cmake is configured to produce a compile_comand.json.
 Most tools expect it to be in the root directory of the project.
-This is achived by creating a link:
-ln -s Debug/compile_commands.json .
+This is achived by creating a link e.g.:
+ln -s build_cmake_gcc9/compile_commands.json
