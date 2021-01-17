@@ -17,7 +17,7 @@ b2 --build-dir=./build_boost -q toolset=gcc-9 app//run
 *** CMake
 **** configure
 mkdir build_cmake
-cmake -B ./build_cmake_gcc9 -S ./ -DCMAKE_C_COMPILER=gcc-9 -DCMAKE_CXX_COMPILER=g++-9
+cmake -B ./build_cmake_gcc9 -S ./ -DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10 -DCMAKE_CXX_STANDARD=20
 **** build
 cmake --build ./build_cmake_gcc9 --target all
 **** execute test and app with ctest
