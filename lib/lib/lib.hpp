@@ -10,6 +10,6 @@ inline namespace v1
 ///
 /// Just a simple sumation function with a nice documentation.
 int add(int a, int b);
-} // namespace v1
-} // namespace lib
-} // namespace xzr
+}
+}
+}

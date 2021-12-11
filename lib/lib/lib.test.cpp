@@ -14,4 +14,4 @@ BOOST_AUTO_TEST_CASE(lib_add)
 }
 
 BOOST_AUTO_TEST_SUITE_END()
-} // namespace
+}
