@@ -2,14 +2,14 @@
   "version": 3,
   "cmakeMinimumRequired": {
     "major": 3,
-    "minor": 22,
+    "minor": 21,
     "patch": 0
   },
   "configurePresets": [
     {
       "name": "base",
       "hidden": true,
-      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       }
@@ -61,30 +61,57 @@
   ],
   "buildPresets": [
     {
+      "name": "gcc",
+      "configurePreset": "gcc"
+    },
+    {
+      "name": "clang",
+      "configurePreset": "clang"
+    },
+    {
       "name": "gccd",
-      "configurePreset": "gccd",
-      "jobs": 8
+      "configurePreset": "gccd"
     },
     {
       "name": "clangd",
-      "configurePreset": "clangd",
-      "jobs": 8
+      "configurePreset": "clangd"
     }
   ],
   "testPresets": [
     {
-      "name": "gccd",
-      "configurePreset": "gccd",
+      "name": "base",
+      "hidden": true,
       "output": {
         "verbosity": "extra"
       }
     },
     {
+      "name": "gcc",
+      "configurePreset": "gcc",
+      "inherits": [
+        "base"
+      ]
+    },
+    {
+      "name": "clang",
+      "configurePreset": "clang",
+      "inherits": [
+        "base"
+      ]
+    },
+    {
+      "name": "gccd",
+      "configurePreset": "gccd",
+      "inherits": [
+        "base"
+      ]
+    },
+    {
       "name": "clangd",
       "configurePreset": "clangd",
-      "output": {
-        "verbosity": "extra"
-      }
+      "inherits": [
+        "base"
+      ]
     }
   ]
 }

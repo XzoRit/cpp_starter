@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.21)
 
 project(
   project_name
@@ -7,8 +7,6 @@ project(
 )
 
 enable_testing()
-
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_subdirectory(app)
 
