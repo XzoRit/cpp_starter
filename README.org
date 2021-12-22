@@ -5,31 +5,54 @@ Clone this repository delete the .git folder rename the project folder to your p
 Boost.Build and CMake build files are available.
 *** Boost.Build
 **** build
-- b2
-- b2 -q toolset=gcc-10 lib//lib
-- b2 -q toolset=gcc-10 lib//test
-- b2 -q toolset=gcc-10 app//exe
+#+BEGIN_SRC bash
+# build and execute all targets
+b2
+# build lib with gcc
+b2 -q toolset=gcc lib//lib
+# build tests of lib with gcc
+b2 -q toolset=gcc lib//test
+# build app with gcc
+b2 -q toolset=gcc app//exe
+#+END_SRC
 **** run application executeable
-- b2 -q toolset=gcc-10 app//run
+#+BEGIN_SRC bash
+# build and run app
+b2 -q toolset=gcc-10 app//run
+#+END_SRC
 *** CMake
 **** configure
-cmake -B ./build -S ./ -DCMAKE_C_COMPILER=gcc-10 -DCMAKE_CXX_COMPILER=g++-10 -DCMAKE_CXX_STANDARD=20
+#+BEGIN_SRC bash
+cmake -B ./build -S ./ -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_CXX_STANDARD=20
+#+END_SRC
 **** build
+#+BEGIN_SRC bash
 cmake --build ./build --target all
+#+END_SRC
 **** execute test and app with ctest
-- cd build && ctest --output-on-failure -V
-- ctest -R 'app::exe' --output-on-failure -V
-- ctest -R 'lib::test' --output-on-failure -V
-**** build and run tests with ctest
-- ctest --build-and-test . ./build --build-generator "Unix Makefiles" --build-noclean --build-nocmake --test-command ./lib/lib_test --help
+#+BEGIN_SRC bash
+cd build && ctest --output-on-failure -V
+ctest -R 'app::exe' --output-on-failure -V
+ctest -R 'lib::test' --output-on-failure -V
+#+END_SRC
 ** formatting
 *** Clang-Format file is available.
+#+BEGIN_SRC bash
+# recursively format all source files
 find ./ -type f -name '*.?pp' -exec clang-format -i {} \;
+#+END_SRC
 *** cmake-format configuration
 see [[https://github.com/cheshirekow/cmake_format][cmake-format]]
-execute with: find . -type f -name 'CMakeLists.txt' -execdir cmake-format -i {} \;
+#+BEGIN_SRC bash
+# recursively format all cmake files
+find . -type f -name 'CMakeLists.txt' -execdir cmake-format -i {} \;
+#+END_SRC
 ** compile_comand.json
 cmake is configured to produce a compile_comand.json.
 Most tools expect it to be in the root directory of the project.
 This is achieved by creating a link e.g.:
+#+BEGIN_SRC bash
+# assumes . is project root and
+# cmake generated the build files into the folder named 'build'
 ln -s build/compile_commands.json
+#+END_SRC
