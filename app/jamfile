@@ -1,3 +1,9 @@
+import boost
+    ;
+
+boost.use-project
+    ;
+
 constant sources
     : [ glob *.cpp ]
     ;
