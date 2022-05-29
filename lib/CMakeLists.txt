@@ -1,19 +1,19 @@
-set(inc_dir ${CMAKE_CURRENT_SOURCE_DIR})
+set(INCLUDE ${CMAKE_CURRENT_SOURCE_DIR})
 
-set(src_dir ${inc_dir}/lib)
+set(SOURCE ${INCLUDE}/lib)
 
 add_library(lib)
 
-target_sources(lib PRIVATE "${src_dir}/lib.cpp" "${src_dir}/lib.hpp")
+target_sources(lib PRIVATE "${SOURCE}/lib.cpp" "${SOURCE}/lib.hpp")
 
-target_include_directories(lib PUBLIC ${inc_dir})
+target_include_directories(lib PUBLIC ${INCLUDE})
 
 add_library(lib::lib ALIAS lib)
 
 add_executable(lib_test)
 
 target_sources(
-  lib_test PRIVATE "${src_dir}/lib.test.cpp" "${src_dir}/main.test.cpp"
+  lib_test PRIVATE "${SOURCE}/lib.test.cpp" "${SOURCE}/main.test.cpp"
 )
 
 target_link_libraries(lib_test PRIVATE lib::lib Boost::unit_test_framework)
