@@ -23,7 +23,7 @@ constant sources
     : [ glob $(src_dir)/*.cpp : $(test_sources) ]
     ;
 
-lib lib
+lib lib_lib
     : $(sources)
     : <include>$(inc_dir)
     :
@@ -33,7 +33,7 @@ lib lib
 run $(test_sources)
     : --color_output=false
     :
-    : <library>lib
+    : <library>lib_lib
       <library>/boost//unit_test_framework
     : test
     ;

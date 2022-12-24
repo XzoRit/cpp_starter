@@ -10,7 +10,7 @@ constant sources
 
 exe exe
     : $(sources)
-      /lib//lib
+      /lib//lib_lib
       /boost//program_options
     ;
 
