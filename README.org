@@ -33,7 +33,7 @@ ctest --preset clang
 ctest --preset clang -R 'app::exe'
 ctest --preset clang -R 'lib::test'
 #+END_SRC
-For building and testing with msvc the config-switch has to be added
+For building and testing with msvc the config-switch has to be added.
 #+BEGIN_SRC batch
 cmake --preset msvc
 cmake --build --preset msvc --config Release
