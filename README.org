@@ -20,7 +20,7 @@ b2 app//run
 b2 toolset=gcc
 #+END_SRC
 *** CMake
-CMake presets for gcc and clang are provided.
+CMake presets for gcc, clang and msvc are provided.
 #+BEGIN_SRC bash
 # configure
 cmake --preset clang
@@ -32,6 +32,14 @@ cmake --build --preset clang --target help
 ctest --preset clang
 ctest --preset clang -R 'app::exe'
 ctest --preset clang -R 'lib::test'
+#+END_SRC
+For building and testing with msvc the config-switch has to be added
+#+BEGIN_SRC batch
+cmake --preset msvc
+cmake --build --preset msvc --config Release
+cmake --build --preset msvc --config Debug
+ctest --preset msvc -C Release
+ctest --preset msvc -C Debug
 #+END_SRC
 ** formatting
 *** Clang-Format file is available.

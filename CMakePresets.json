@@ -17,6 +17,11 @@
       }
     },
     {
+      "name": "ninja",
+      "hidden": true,
+      "generator": "Ninja"
+    },
+    {
       "name": "based",
       "hidden": true,
       "inherits": [
@@ -94,6 +99,12 @@
         "shrd",
         "clangd"
       ]
+    },
+    {
+      "name": "msvc",
+      "inherits": [
+        "base"
+      ]
     }
   ],
   "buildPresets": [
@@ -128,6 +139,10 @@
     {
       "name": "clangdshrd",
       "configurePreset": "clangdshrd"
+    },
+    {
+      "name": "msvc",
+      "configurePreset": "msvc"
     }
   ],
   "testPresets": [
@@ -190,6 +205,13 @@
     {
       "name": "clangdshrd",
       "configurePreset": "clangdshrd",
+      "inherits": [
+        "base"
+      ]
+    },
+    {
+      "name": "msvc",
+      "configurePreset": "msvc",
       "inherits": [
         "base"
       ]
