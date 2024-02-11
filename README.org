@@ -32,6 +32,8 @@ cmake --build --preset clang --target help
 ctest --preset clang
 ctest --preset clang -R 'app::exe'
 ctest --preset clang -R 'lib::test'
+# workflow
+cmake --workflow --preset clang
 #+END_SRC
 ** formatting
 *** Clang-Format file is available.
