@@ -4,14 +4,11 @@
 
 namespace
 {
-using xzr::lib::add;
-
 BOOST_AUTO_TEST_SUITE(lib_tests)
 
 BOOST_AUTO_TEST_CASE(lib_add)
 {
-    BOOST_TEST(add(2, 2) == 4);
-    BOOST_TEST(add(2, 3) == 4);
+    BOOST_TEST(::xzr::lib::add(2, 3) == 5);
 }
 
 BOOST_AUTO_TEST_SUITE_END()
