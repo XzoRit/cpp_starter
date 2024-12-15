@@ -1,27 +1,15 @@
-* template for c++ projects
-This folder contains the project structure.
-Clone this repository delete the .git folder rename the project folder to your project name.
-** build files
-Boost.Build and CMake build files are available.
-*** Boost.Build
-**** build
-#+BEGIN_SRC bash
-# build and run all targets
-b2
-# build lib
-b2 lib//lib_lib
-# build/run tests of lib
-b2 lib//test
-# build app
-b2 app//exe
-# build/run app
-b2 app//run
-# if you want to use a different compiler
-b2 toolset=gcc
-#+END_SRC
-*** CMake
+* c++ starter project
+This repository contains a starting point for creating a new c++ project.
+To create a new project from this ...
+- ... clone this repository ...
+- ... delete the .git folder ...
+- ... rename the project folder to your project name.
+** building
+*** cmake
 CMake presets for gcc, clang and msvc are provided.
 #+BEGIN_SRC bash
+# workflow
+cmake --workflow --preset clang
 # configure
 cmake --preset clang
 # build
@@ -33,24 +21,24 @@ ctest --preset clang
 ctest --preset clang -R 'app::exe'
 ctest --preset clang -R 'lib::test'
 #+END_SRC
+** packages
+*** vcpkg
+vcpkg is used as a package manager.
+The build files assume that the environment variable VCPK_ROOT is set to the vcpkg directory.
 ** formatting
-*** Clang-Format file is available.
+*** clang-format
 #+BEGIN_SRC bash
-# recursively format all source files
 find ./ -type f -name '*.?pp' -exec clang-format -i {} \;
 #+END_SRC
-*** cmake-format configuration
+*** cmake-format
 see [[https://github.com/cheshirekow/cmake_format][cmake-format]]
 #+BEGIN_SRC bash
-# recursively format all cmake files
 find . -type f -name 'CMakeLists.txt' -execdir cmake-format -i {} \;
 #+END_SRC
-** compile_comand.json
-cmake is configured to produce a compile_comand.json.
+** compile_commands.json
+cmake is configured to produce a compile_commands.json.
 Most tools expect it to be in the root directory of the project.
-This is achieved by creating a link e.g.:
+This is achieved by creating a link.
 #+BEGIN_SRC bash
-# assumes . is project root and
-# cmake generated the build files into the folder named 'build'
-ln -s build/clang/compile_commands.json
+ln -s build/gccd/compile_commands.json
 #+END_SRC

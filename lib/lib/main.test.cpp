@@ -1,3 +1,7 @@
-#define BOOST_TEST_MODULE lib_test
+#include <boost/ut.hpp>
 
-#include <boost/test/unit_test.hpp>
+namespace ut = boost::ut;
+
+int main()
+{
+}

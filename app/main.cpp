@@ -1,10 +1,6 @@
 #include <lib/lib.hpp>
 
-#include <boost/program_options.hpp>
-
 #include <iostream>
-
-namespace po = boost::program_options;
 
 int main(int ac, char* av[])
 {
@@ -12,17 +8,8 @@ int main(int ac, char* av[])
 
     try
     {
-        po::options_description desc("Allowed options");
-        desc.add_options()("help", "produce help message");
-
-        po::variables_map vm;
-        po::store(po::parse_command_line(ac, av, desc), vm);
-        po::notify(vm);
-
-        if (vm.count("help"))
-        {
-            std::cout << desc << "\n";
-        }
+        std::cout << "result = " << xzr::lib::add(0, 0);
+        return 0;
     }
     catch (const std::exception& e)
     {
@@ -32,7 +19,6 @@ int main(int ac, char* av[])
     catch (...)
     {
         std::cerr << "Exception of unknown type!\n";
+        return 2;
     }
-
-    return xzr::lib::add(0, 0);
 }
