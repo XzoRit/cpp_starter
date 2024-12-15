@@ -2,12 +2,9 @@
 
 #include <boost/ut.hpp>
 
-namespace ut = boost::ut;
+int main(int, const char**)
+{
+    using namespace boost::ut;
 
-ut::suite errors = [] {
-    using namespace ut;
-
-    "throws"_test = [] { expect(throws([] { throw 0; })); };
-
-    "doesn't throw"_test = [] { expect(nothrow([] {})); };
-};
+    expect(::xzr::lib::add(1, 2) == 3_i);
+}
