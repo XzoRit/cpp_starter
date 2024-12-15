@@ -1,15 +1,13 @@
 #include <lib/lib.hpp>
 
-#include <boost/test/unit_test.hpp>
+#include <boost/ut.hpp>
 
-namespace
-{
-BOOST_AUTO_TEST_SUITE(lib_tests)
+namespace ut = boost::ut;
 
-BOOST_AUTO_TEST_CASE(lib_add)
-{
-    BOOST_TEST(::xzr::lib::add(2, 3) == 5);
-}
+ut::suite errors = [] {
+    using namespace ut;
 
-BOOST_AUTO_TEST_SUITE_END()
-}
+    "throws"_test = [] { expect(throws([] { throw 0; })); };
+
+    "doesn't throw"_test = [] { expect(nothrow([] {})); };
+};
