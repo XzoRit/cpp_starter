@@ -2,9 +2,10 @@
 
 #include <boost/ut.hpp>
 
-int main(int, const char**)
-{
-    using namespace boost::ut;
+using namespace ::boost::ut;
 
-    expect(::xzr::lib::add(1, 2) == 3_i);
-}
+suite<"test_lib"> suite_lib = []() {
+    using ::xzr::lib::add;
+    "add(1, 2)"_test = []() { expect(add(1, 2) == 3_i); };
+    "add(1, 3)"_test = []() { expect(add(1, 3) == 3_i); };
+};
