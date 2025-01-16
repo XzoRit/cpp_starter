@@ -9,17 +9,17 @@ To create a new project from this ...
 CMake presets for gcc, clang and msvc are provided.
 #+BEGIN_SRC bash
 # workflow
-cmake --workflow --preset clang
+cmake --workflow --preset gcc
 # configure
-cmake --preset clang
+cmake --preset gcc
 # build
-cmake --build --preset clang
+cmake --build --preset gcc
 # list all available targets
-cmake --build --preset clang --target help
+cmake --build --preset gcc --target help
 # test
-ctest --preset clang
-ctest --preset clang -R 'app::exe'
-ctest --preset clang -R 'lib::test'
+ctest --preset gcc
+ctest --preset gcc -R 'app::exe'
+ctest --preset gcc -R 'lib::test'
 #+END_SRC
 ** packages
 *** vcpkg
@@ -40,5 +40,5 @@ cmake is configured to produce a compile_commands.json.
 Most tools expect it to be in the root directory of the project.
 This is achieved by creating a link.
 #+BEGIN_SRC bash
-ln -s build/gccd/compile_commands.json
+ln -s build/gcc/compile_commands.json
 #+END_SRC
