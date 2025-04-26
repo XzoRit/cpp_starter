@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-int main(int ac, char* av[])
+auto main(int, char**) -> int
 {
     std::cout << "Hello app\n";
 
